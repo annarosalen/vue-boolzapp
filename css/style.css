@@ -10,7 +10,7 @@
 }
 
 .app #bg-up{
-  height: 100px;
+  height: 110px;
   background-color: #009988;
 }
 
@@ -21,7 +21,7 @@
 
 .container{
   /* debug */
-  height: 500px;
+  min-height: 700px;
   background-color: red;
 
   width: 1270px;
@@ -33,7 +33,7 @@
   display: flex;
 }
 
-/* LEFT COLUMN */
+/************* LEFT COLUMN ***********/
 
 .left-column{
   /* debug */
@@ -44,28 +44,29 @@
   flex-direction: column;
 }
 
+/* nav bar */
 .nav{
-  flex-basis: 40%;
+  flex-basis: content;
   display: flex;
   flex-direction: column;
 }
 
 .nav #user-profile{
-  flex-basis: 35%;
+  flex-basis: 60px;
   background-color: #eaeaea;
 }
 
 .nav #set-notifications{
-  flex-basis: 45%;
+  flex-basis: 90px;
   background-color: #76dcff;
 }
 
 .nav #search-bar{
-  flex-basis: 20%;
+  flex-basis: 50px;
   background-color: #fafafa;
 }
 
-/* lista chat */
+/* lista delle chat */
 .chat-list{
   flex-grow: 1;
   background-color: white;
@@ -77,7 +78,7 @@
   border: solid gray 1px;
 }
 
- /* RIGHT MAIN SECTION CHAT  */
+ /********** RIGHT MAIN SECTION CHAT  *******/
 .right-mainsection{
   flex-grow: 1;
   display: flex;
@@ -85,17 +86,16 @@
 }
 
 .right-mainsection #contact-info{
-  flex-basis: 14%;
+  flex-basis: 60px;
   background-color: #eaeaea;
-  /* border: 1px solid black; */
 }
 
 .right-mainsection #active-chat{
- flex-grow: 1;
- background-image:url(../img/whatsappbg.png);
+  flex-grow: 1;
+  background-image:url(../img/whatsappbg.png);
 }
 
 .right-mainsection #msg-bar{
-  flex-basis: 14%;
+  flex-basis: 60px;
   background-color: #eaeaea;
 }
