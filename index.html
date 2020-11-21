@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Boolzapp</title>
-    <link rel="stylesheet" href="css/style.css">
     <script src="https://use.fontawesome.com/617605346e.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boolzapp</title>
   </head>
   <body>
 
@@ -30,19 +31,39 @@
 
           <nav class="nav">
 
-            <!-- user profile -->
-            <div id="user-profile">
+            <!-- user -->
+            <div id="user">
+
+              <div id="user-profile">
+                <img src="img/avatar_6.jpg" alt="">
+                <a href="#"><span>Nome Utente</span></a>
+              </div>
+
+              <div id="user-icons">
+                <a href="#"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a>
+                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
+                <a href="#"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+              </div>
 
             </div>
 
             <!-- settings notifications -->
             <div id="set-notifications">
-
+              <div id="not-bell">
+                <a href="#"><i class="fa fa-bell-slash" aria-hidden="true"></i></a>
+              </div>
+              <div id="set">
+                <a href="#"><span>Ricevi notifiche di nuovi messaggi</span></a>
+                <a href="#" id="set-active"><span>Attiva notifiche da desktop</span></a>
+              </div>
             </div>
 
             <!-- search bar -->
-            <div id="search-bar">
-
+            <div id="search">
+              <div id="search-bar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat">
+              </div>
             </div>
 
           </nav>
@@ -52,13 +73,63 @@
 
             <!--  chat -->
             <li class="chat">
-
+              <a href="#">
+                <div class="image">
+                  <img src="img/avatar_1.jpg" alt="">
+                </div>
+                <div class="info-chat">
+                  <span class="contact-name">Michele</span>
+                  <span class="last-msg">ciao ...</span>
+                </div>
+                <div class="time">
+                  <span>21/11/2020</span>
+                </div>
+              </a>
             </li>
-            <li class="chat">
 
+            <li class="chat">
+              <a href="#">
+                <div class="image">
+                  <img src="img/avatar_2.jpg" alt="">
+                </div>
+                <div class="info-chat">
+                  <span class="contact-name">Fabio</span>
+                  <span class="last-msg">ciao ...</span>
+                </div>
+                <div class="time">
+                  <span>21/11/2020</span>
+                </div>
+              </a>
             </li>
-            <li class="chat">
 
+            <li class="chat">
+              <a href="#">
+                <div class="image">
+                  <img src="img/avatar_3.jpg" alt="">
+                </div>
+                <div class="info-chat">
+                  <span class="contact-name">Samuele</span>
+                  <span class="last-msg">ciao ...</span>
+                </div>
+                <div class="time">
+                  <span>21/11/2020</span>
+                </div>
+              </a>
+            </li>
+
+            <li class="chat">
+              <a href="#">
+                <div class="image">
+                  <img src="img/avatar_4.jpg" alt="">
+                </div>
+                <div class="info-chat">
+                  <span class="contact-name">Giacomo</span>
+                  <span class="last-msg">ciao ...</span>
+                </div>
+                <div class="time">
+                  <span>21/11/2020</span>
+                </div>
+              </a>
             </li>
 
           </ul>
