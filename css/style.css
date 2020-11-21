@@ -71,7 +71,7 @@ a{
 }
 
 #user-profile img{
-  height: 40px;
+  height: 50px;
   border-radius: 50%;
 }
 
@@ -179,7 +179,7 @@ a{
   line-height: 20px;
 }
 
-.info-chat .contact-name{
+.info-chat .name{
   color: black;
   font-weight: bold;
 }
@@ -210,8 +210,35 @@ a{
 .right-mainsection #contact-info{
   flex-basis: 60px;
   background-color: #eaeaea;
+  padding: 10px;
 }
 
+#contact-info img{
+  float: left;
+  height: 50px;
+  border-radius: 50%;
+}
+
+#contact{
+  float: left;
+  line-height: 20px;
+  padding-left: 20px;
+  width: 80%;
+}
+
+#contact-name{
+  font-weight: bold;
+  display: block;
+}
+
+#last-con{
+  font-size: 13px;
+  color: gray;
+}
+
+#chat-icons{
+  float: left;
+}
 .right-mainsection #active-chat{
   flex-grow: 1;
   background-image:url(../img/whatsappbg.png);
@@ -220,4 +247,18 @@ a{
 .right-mainsection #msg-bar{
   flex-basis: 60px;
   background-color: #eaeaea;
+  padding: 10px 20px;
+}
+
+#msg-bar .fa-smile-o, .fa-microphone{
+  font-size: 25px;
+  color: #697376;
+}
+
+#msg-bar input{
+  width: 90%;
+  margin: 0 20px;
+  height: 50px;
+  padding-left: 20px;
+  border: none;
 }
