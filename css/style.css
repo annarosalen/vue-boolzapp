@@ -30,7 +30,7 @@ a{
   /* debug  */
   /* background-color: red; */
 
-  min-height: 700px;
+  max-height: 700px;
   width: 1270px;
   position: absolute;
   top: 0;
@@ -38,6 +38,7 @@ a{
   transform: translate(-50%);
   margin-top: 20px;
   display: flex;
+  z-index: 100;
 }
 
 /************* LEFT COLUMN ***********/
@@ -53,7 +54,7 @@ a{
 
 /* inizio nav bar */
 .nav{
-  flex-basis: content;
+  flex-basis: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -151,15 +152,10 @@ a{
 }
 
 /* lista delle chat */
-
-#chat-list-container{
-  height: calc(700px - 200px);
-  overflow: auto;
-}
-
 .chat-list{
-  height: auto;
+  height: 500px;
   background-color: white;
+  overflow: auto;
 }
 
 .chat{
@@ -196,10 +192,9 @@ a{
   display: block;
   color: lightgray;
   font-size: 13px;
-  overflow: hidden;
 }
 
-.chat .time{
+.chat .time-last-msg{
   flex-basis: 30%;
   text-align: right;
   font-size: 13px;
@@ -245,25 +240,80 @@ a{
 }
 
 #chat-icons{
-  float: left;
+  float: right;
 }
+
+#chat-icons .fa-search, .fa-paperclip, .fa-ellipsis-v{
+  font-size: 25px;
+  color: #b1b1b1;
+  padding-top:15px;
+  padding-right: 15px;
+}
+
 .right-mainsection #active-chat{
   flex-grow: 1;
   background-image:url(../img/whatsappbg.png);
+  overflow: auto;
 }
 
-.right-mainsection #msg-bar{
+#active-chat .row-msg{
+  min-height: 100px;
+  width: 100%;
+}
+
+.row-msg .box-msg-right{
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 500px;
+  float: right;
+  word-wrap: break-word;
+}
+
+.row-msg .msg-sent{
+  min-height: 60px;
+  min-width: 200px;
+  margin: 30px 100px;
+  padding: 10px;
+  background-color: #cbfbb3;
+  border-radius: 15px;
+}
+
+.msg-time{
+  display: block;
+  font-size: 12px;
+  text-align: right;
+  color: gray;
+  padding-top: 10px;
+}
+.row-msg .box-msg-left{
+  min-height: 100px;
+  min-width: 300px;
+  max-width: 500px;
+  float: left;
+  word-wrap: break-word;
+}
+
+.row-msg .msg-received{
+  min-height: 60px;
+  min-width: 200px;
+  margin: 30px 100px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.right-mainsection #writing-msg-bar{
   flex-basis: 60px;
   background-color: #eaeaea;
   padding: 10px 20px;
 }
 
-#msg-bar .fa-smile-o, .fa-microphone{
+#writing-msg-bar .fa-smile-o, .fa-microphone{
   font-size: 25px;
   color: #697376;
 }
 
-#msg-bar input{
+#writing-msg-bar input{
   width: 90%;
   margin: 0 20px;
   height: 50px;
