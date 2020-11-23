@@ -243,7 +243,7 @@ a{
   float: right;
 }
 
-#chat-icons .fa-search, .fa-paperclip, .fa-ellipsis-v{
+#chat-icons .fa-search, #chat-icons .fa-paperclip, #chat-icons .fa-ellipsis-v{
   font-size: 25px;
   color: #b1b1b1;
   padding-top:15px;
@@ -289,7 +289,7 @@ a{
   min-height: 100px;
   min-width: 300px;
   max-width: 500px;
-  float: left;
+  /* float: left; */
   word-wrap: break-word;
 }
 

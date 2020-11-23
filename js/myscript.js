@@ -1,17 +1,17 @@
-var app= new Vue{
+var app= new Vue({
   el:"#app",
   data: {
     contatti: [
       {
-        nome:"Michele",
+        name:"Michele",
         image:"img/avatar_1.jpg",
-        lastconn: "10/11/2020 alle ore 13:12",
+        lastconn: "Ultimo accesso 10/11/2020 alle ore 13:12",
         chat: {
           sent: ["ciao come stai?", "asfgfasf"],
-          received:["ciao tutto bene", "abckdelkae"] 
+          received:["ciao tutto bene", "abckdelkae"]
         }
       }
     ]
   }
 
-}
+});

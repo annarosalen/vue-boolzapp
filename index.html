@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <div class="app">
+    <div id="app">
 
       <!-- green side -->
       <div id="bg-up">
@@ -138,14 +138,14 @@
         </aside> <!--end left column-->
 
         <!-- RIGHT MAIN SECTION CHAT -->
-        <section class="right-mainsection">
+        <section class="right-mainsection" v-for="(item,index) in contatti">
 
           <!-- contact info -->
-          <div id="contact-info">
-            <img src="img/avatar_2.jpg" alt="">
-            <div id="contact">
-              <span id="contact-name">Fabio</span>
-              <span id="last-con">Ultimo accesso 21/11/2020 alle 18:33</span>
+          <div id="contact-info"  >
+            <img :src= "item.image" alt="">
+            <div id="contact" >
+              <span id="contact-name">{{ item.name }}</span>
+              <span id="last-con"> {{ item.lastconn }}</span>
             </div>
             <div id="chat-icons">
               <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -159,7 +159,7 @@
             <div class="row-msg">
               <div class="box-msg-right">
                 <div class="msg-sent">
-                  <p>ciao come stai?</p>
+                  <p>{{ item.chat.sent[0] }}</p>
                   <span class="msg-time">10/11/2020 13:33</span>
                 </div>
               </div>
@@ -167,7 +167,7 @@
             <div class="row-msg">
               <div class="box-msg-left">
                 <div class="msg-received">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p> {{ item.chat.received[0] }}</p>
                   <span class="msg-time">10/11/2020 13:33</span>
                 </div>
               </div>
@@ -176,7 +176,7 @@
             <div class="row-msg">
               <div class="box-msg-left">
                 <div class="msg-received">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  <p> {{ item.chat.received[1] }}</p>
                   <span class="msg-time">10/11/2020 13:33</span>
                 </div>
               </div>
