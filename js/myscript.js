@@ -1,6 +1,7 @@
 var app= new Vue({
   el:"#app",
   data: {
+    message:"",
     contattiIndex: 0,
     contatti: [
 
@@ -93,6 +94,12 @@ var app= new Vue({
   methods:{
     openedchat: function(index){
       this.contattiIndex= index;
+    },
+
+    enterMsg: function(){
+      this.contatti[this.contattiIndex].chat.push({msg: this.message, stato: "msg-sent", posizione: "box-msg-right"});
+
+      this.message="";
     }
   }
 
