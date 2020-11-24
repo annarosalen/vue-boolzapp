@@ -69,83 +69,37 @@
           </nav>
 
           <!-- chat list -->
-          <div class="chat-list">
+          <div class="chat-list" v-for="(item,index) in contatti"  >
 
             <!--  chat -->
-            <div class="chat">
+            <div class="chat" @click="openedchat(index)">
               <a href="#">
                 <div class="image">
-                  <img src="img/avatar_1.jpg" alt="">
+                  <img :src="item.image" alt="">
                 </div>
                 <div class="info-chat">
-                  <span class="name">Michele</span>
-                  <span class="last-msg">ciao ...</span>
+                  <span class="name">{{item.name}}</span>
+                  <span class="last-msg">ciao..</span>
                 </div>
                 <div class="time-last-msg">
-                  <span>21/11/2020</span>
-                </div>
-              </a>
-            </div>
-
-            <div class="chat">
-              <a href="#">
-                <div class="image">
-                  <img src="img/avatar_2.jpg" alt="">
-                </div>
-                <div class="info-chat">
-                  <span class="name">Fabio</span>
-                  <span class="last-msg">ciao ...</span>
-                </div>
-                <div class="time-last-msg">
-                  <span>21/11/2020</span>
-                </div>
-              </a>
-            </div>
-
-            <div class="chat">
-              <a href="#">
-                <div class="image">
-                  <img src="img/avatar_3.jpg" alt="">
-                </div>
-                <div class="info-chat">
-                  <span class="name">Samuele</span>
-                  <span class="last-msg">ciao ...</span>
-                </div>
-                <div class="time-last-msg">
-                  <span>21/11/2020</span>
-                </div>
-              </a>
-            </div>
-
-            <div class="chat">
-              <a href="#">
-                <div class="image">
-                  <img src="img/avatar_4.jpg" alt="">
-                </div>
-                <div class="info-chat">
-                  <span class="name">Giacomo</span>
-                  <span class="last-msg">ciao ...</span>
-                </div>
-                <div class="time-last-msg">
-                  <span>21/11/2020</span>
+                  <span>{{item.lastday}}</span>
                 </div>
               </a>
             </div>
 
           </div >
 
-
         </aside> <!--end left column-->
 
         <!-- RIGHT MAIN SECTION CHAT -->
-        <section class="right-mainsection" v-for="(item,index) in contatti">
+        <section class="right-mainsection" v-for="(item,index) in contatti" :key="index" :class="{active: index===contattiIndex}" >
 
           <!-- contact info -->
           <div id="contact-info"  >
             <img :src= "item.image" alt="">
             <div id="contact" >
-              <span id="contact-name">{{ item.name }}</span>
-              <span id="last-con"> {{ item.lastconn }}</span>
+              <span id="contact-name">{{ item.name}}</span>
+              <span id="last-con"> Ultimo accesso {{ item.lastday + item.time }}</span>
             </div>
             <div id="chat-icons">
               <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
@@ -155,35 +109,21 @@
           </div>
 
           <!-- active chat -->
-          <div id="active-chat">
-            <div class="row-msg">
-              <div class="box-msg-right">
-                <div class="msg-sent">
-                  <p>{{ item.chat.sent[0] }}</p>
+          <div id="active-chat" >
+
+            <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
+              <div :class="item.posizione">
+                <div :class="item.stato">
+                  <p>{{ item.msg }}</p>
                   <span class="msg-time">10/11/2020 13:33</span>
                 </div>
               </div>
             </div>
-            <div class="row-msg">
-              <div class="box-msg-left">
-                <div class="msg-received">
-                  <p> {{ item.chat.received[0] }}</p>
-                  <span class="msg-time">10/11/2020 13:33</span>
-                </div>
-              </div>
-            </div>
-            <!-- prova -->
-            <div class="row-msg">
-              <div class="box-msg-left">
-                <div class="msg-received">
-                  <p> {{ item.chat.received[1] }}</p>
-                  <span class="msg-time">10/11/2020 13:33</span>
-                </div>
-              </div>
-            </div>
+
 
 
           </div>
+
 
           <!-- writing msg bar -->
           <div id="writing-msg-bar">
