@@ -100,7 +100,15 @@ var app= new Vue({
       this.contatti[this.contattiIndex].chat.push({msg: this.message, stato: "msg-sent", posizione: "box-msg-right"});
 
       this.message="";
-    }
-  }
+
+      setTimeout(this.getMsg, 1000);
+    },
+
+    getMsg: function(){
+      this.contatti[this.contattiIndex].chat.push({msg: "ok", stato: "msg-received", posizione: "box-msg-left"});
+
+    },
+
+  },
 
 });
