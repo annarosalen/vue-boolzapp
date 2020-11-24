@@ -69,10 +69,10 @@
           </nav>
 
           <!-- chat list -->
-          <div class="chat-list" v-for="(item,index) in contatti"  >
+          <div class="chat-list"  >
 
             <!--  chat -->
-            <div class="chat" @click="openedchat(index)">
+            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" >
               <a href="#">
                 <div class="image">
                   <img :src="item.image" alt="">
@@ -114,7 +114,7 @@
               <div :class="item.posizione">
                 <div :class="item.stato">
                   <p>{{ item.msg }}</p>
-                  <span class="msg-time">10/11/2020 13:33</span>
+                  <span class="msg-time">{{ item.date }}</span>
                 </div>
               </div>
             </div>
