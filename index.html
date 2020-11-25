@@ -62,18 +62,18 @@
             <div id="search">
               <div id="search-bar">
                 <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat">
+                <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="filtroChat()" >
               </div>
             </div>
 
           </nav>
 
           <!-- chat list -->
-          <div class="chat-list"  >
+          <div class="chat-list" >
 
             <!--  chat -->
-            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" >
-              <a href="#">
+            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-show="item.display" :class='{chatActive: index===contattiIndex}' >
+              <a href="#" >
                 <div class="image">
                   <img :src="item.image" alt="">
                 </div>

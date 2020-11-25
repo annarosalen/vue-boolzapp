@@ -1,6 +1,7 @@
 var app= new Vue({
   el:"#app",
   data: {
+    search:"",
     message:"",
     contattiIndex: 0,
     contatti: [
@@ -10,6 +11,7 @@ var app= new Vue({
         image:"img/avatar_1.jpg",
         lastday: "10/11/2020 ",
         time:"alle ore 13:12",
+        display: true,
         chat: [
           {
             msg: "ciao come stai?",
@@ -37,6 +39,7 @@ var app= new Vue({
         image:"img/avatar_2.jpg",
         lastday: "13/11/2020 ",
         time:"alle ore 14:00",
+        display: true,
         chat: [
           {
             msg: "ciaooooo?",
@@ -57,6 +60,7 @@ var app= new Vue({
         image:"img/avatar_3.jpg",
         lastday: "30/11/2020 ",
         time:"alle ore 18:00",
+        display: true,
         chat: [
           {
             msg: "Hola como estas?",
@@ -84,6 +88,7 @@ var app= new Vue({
         image:"img/avatar_4.jpg",
         lastday: "31/10/2020 ",
         time:"alle ore 09:00",
+        display: true,
         chat: [
           {
             msg:"Hi I'll call you tomorrow",
@@ -143,8 +148,16 @@ var app= new Vue({
       var time = today.getHours() + ":" + today.getMinutes();
       var dateTime = date+' '+time;
       return dateTime;
-    }
+    },
 
-  },
+    filtroChat: function() {
+      if(this.contatti[this.contattiIndex].name.toLowerCase().includes(this.search.toLowerCase())){
+        this.contatti[this.contattiIndex].display = true;
+      }else{
+        this.contatti[this.contattiIndex].display = false;
+      }
+    }
+  }
+
 
 });
