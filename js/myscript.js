@@ -107,15 +107,34 @@ var app= new Vue({
     },
 
     enterMsg: function(){
-      this.contatti[this.contattiIndex].chat.push({msg: this.message, date: this.currentTime(), stato: "msg-sent", posizione: "box-msg-right"});
+      if (this.message=="") {
 
-      this.message="";
+      }else {
+        this.contatti[this.contattiIndex].chat.push(
+          {
+            msg: this.message,
+            date: this.currentTime(),
+            stato: "msg-sent",
+            posizione: "box-msg-right"
+          }
+        );
 
-      setTimeout(this.getMsg, 1000);
+        this.message="";
+
+        setTimeout(this.getMsg, 1000);
+      }
+
     },
 
     getMsg: function(){
-      this.contatti[this.contattiIndex].chat.push({msg: "ok", date: this.currentTime(), stato: "msg-received", posizione: "box-msg-left"});
+      this.contatti[this.contattiIndex].chat.push(
+        {
+          msg: "ok",
+          date: this.currentTime(),
+          stato: "msg-received",
+          posizione: "box-msg-left"
+        }
+      );
     },
 
     currentTime: function(){

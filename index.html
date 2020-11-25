@@ -79,7 +79,7 @@
                 </div>
                 <div class="info-chat">
                   <span class="name">{{item.name}}</span>
-                  <span class="last-msg">ciao..</span>
+                  <span class="last-msg"></span>
                 </div>
                 <div class="time-last-msg">
                   <span>{{item.lastday}}</span>
@@ -125,7 +125,7 @@
           <div id="writing-msg-bar">
             <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
             <input type="text" v-model="message" placeholder="Scrivi un messaggio" @keypress.enter="enterMsg">
-            <a href="#"> <i class="fa fa-microphone" aria-hidden="true"></i></a>
+            <a href="#"> <i class="fa fa-microphone" aria-hidden="true" @click="enterMsg"></i></a>
           </div>
 
         </section>
