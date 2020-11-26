@@ -151,12 +151,15 @@ var app= new Vue({
     },
 
     filtroChat: function() {
-      if(this.contatti[this.contattiIndex].name.toLowerCase().includes(this.search.toLowerCase())){
-        this.contatti[this.contattiIndex].display = true;
-      }else{
-        this.contatti[this.contattiIndex].display = false;
-      }
+      this.contatti.forEach(item => {
+        if(item.name.toLowerCase().indexOf(this.search.toLowerCase())>-1){
+          item.display = true;
+        }else{
+          item.display = false;
+        }
+      });
     }
+    
   }
 
 

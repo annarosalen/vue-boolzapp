@@ -72,7 +72,7 @@
           <div class="chat-list" >
 
             <!--  chat -->
-            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-show="item.display" :class='{chatActive: index===contattiIndex}' >
+            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{chatActive: index===contattiIndex}' >
               <a href="#" >
                 <div class="image">
                   <img :src="item.image" alt="">
