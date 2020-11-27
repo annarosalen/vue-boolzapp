@@ -6,37 +6,26 @@
   font-family: 'Lato', sans-serif;
 }
 
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient( to bottom, #009988 0%, #009988 20%, #d4dbd9 20%, #d4dbd9 100% );
+  overflow: hidden;
+}
+
 a{
   text-decoration: none;
 }
 
-/* general container */
 #app{
-  position: relative;
-  overflow: hidden;
-}
-
-#app #bg-up{
-  height: 110px;
-  background-color: #009988;
-}
-
-#app #bg-down{
-  min-height: calc(100vh - 110px) ;
-  background-color: #d7dbd4;
-}
-
-.container{
-  max-height: 700px;
-  width: 1270px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-  margin-top: 20px;
+  width: 80%;
+  height: 90%;
+  background: #fff;
   display: flex;
-  z-index: 100;
 }
+
 
 /************* LEFT COLUMN ***********/
 
@@ -272,13 +261,6 @@ a{
   border-radius: 15px;
 }
 
-.msg-time{
-  display: block;
-  font-size: 12px;
-  text-align: right;
-  color: gray;
-  padding-top: 10px;
-}
 .row-msg .box-msg-left{
   min-height: 100px;
   min-width: 300px;
@@ -295,6 +277,23 @@ a{
   border-radius: 15px;
 }
 
+#messaggio{
+  display: inline;
+}
+
+.fa-chevron-down{
+  float: right;
+  display: none;
+}
+
+.msg-time{
+  display: block;
+  font-size: 12px;
+  text-align: right;
+  color: gray;
+  padding-top: 10px;
+}
+
 .right-mainsection #writing-msg-bar{
   flex-basis: 60px;
   background-color: #eaeaea;
@@ -307,7 +306,7 @@ a{
 }
 
 #writing-msg-bar input{
-  width: 90%;
+  width: 88%;
   margin: 0 20px;
   height: 50px;
   padding-left: 20px;
@@ -322,4 +321,8 @@ a{
 .chatActive{
   display: block;
   background-color: lightgray;
+}
+
+.chevronActive{
+  display: block;
 }

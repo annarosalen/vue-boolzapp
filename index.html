@@ -12,127 +12,111 @@
 
     <div id="app">
 
-      <!-- green side -->
-      <div id="bg-up">
-
-      </div>
-
-      <!-- gray side -->
-      <div id="bg-down">
-
-      </div>
-
-      <!-- CONTAINER POSITION ABSOLUTE -->
-      <main class="container">
-
         <!-- LEFT COLUMN -->
-        <section class="left-column">
+      <section class="left-column">
 
 
-          <nav class="nav">
+        <nav class="nav">
 
-            <!-- user -->
-            <div id="user">
+          <!-- user -->
+          <div id="user">
 
-              <div id="user-profile">
-                <img src="img/avatar_6.jpg" alt="">
-                <a href="#"><span>Nome Utente</span></a>
-              </div>
-
-              <div id="user-icons">
-                <a href="#"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
-                <a href="#"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
-              </div>
-
+            <div id="user-profile">
+              <img src="img/avatar_6.jpg" alt="">
+              <a href="#"><span>Nome Utente</span></a>
             </div>
 
-            <!-- settings notifications -->
-            <div id="set-notifications">
-              <div id="not-bell">
-                <a href="#"><i class="fa fa-bell-slash" aria-hidden="true"></i></a>
-              </div>
-              <div id="set">
-                <a href="#"><span>Ricevi notifiche di nuovi messaggi</span></a>
-                <a href="#" id="set-active"><span>Attiva notifiche da desktop</span></a>
-              </div>
-            </div>
-
-            <!-- search bar -->
-            <div id="search">
-              <div id="search-bar">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="filtroChat()" >
-              </div>
-            </div>
-
-          </nav>
-
-          <!-- chat list -->
-          <div class="chat-list" >
-
-            <!--  chat -->
-            <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{chatActive: index===contattiIndex}' >
-              <a href="#" >
-                <div class="image">
-                  <img :src="item.image" alt="">
-                </div>
-                <div class="info-chat">
-                  <span class="name">{{item.name}}</span>
-                  <span class="last-msg">{{ item.chat[item.chat.length - 1].msg }}</span>
-                </div>
-                <div class="time-last-msg">
-                  <span>{{item.lastday}}</span>
-                </div>
-              </a>
-            </div>
-
-          </div >
-
-        </section> <!--end left column-->
-
-        <!-- RIGHT MAIN SECTION CHAT -->
-        <section class="right-mainsection" v-for="(item,index) in contatti" :key="index" :class="{active: index===contattiIndex}" >
-
-          <!-- contact info -->
-          <div id="contact-info"  >
-            <img :src= "item.image" alt="">
-            <div id="contact" >
-              <span id="contact-name">{{ item.name}}</span>
-              <span id="last-con"> Ultimo accesso {{ item.lastday + item.time }}</span>
-            </div>
-            <div id="chat-icons">
-              <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-              <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+            <div id="user-icons">
+              <a href="#"><i class="fa fa-circle-o-notch" aria-hidden="true"></i></a>
+              <a href="#"><i class="fa fa-comment" aria-hidden="true"></i></a>
               <a href="#"> <i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
             </div>
+
           </div>
 
-          <!-- active chat -->
-          <div id="active-chat" >
-            <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
-              <div :class="item.posizione">
-                <div :class="item.stato">
-                  <p>{{ item.msg }}</p>
-                  <span class="msg-time">{{ item.date }}</span>
-                </div>
-              </div>
+          <!-- settings notifications -->
+          <div id="set-notifications">
+            <div id="not-bell">
+              <a href="#"><i class="fa fa-bell-slash" aria-hidden="true"></i></a>
+            </div>
+            <div id="set">
+              <a href="#"><span>Ricevi notifiche di nuovi messaggi</span></a>
+              <a href="#" id="set-active"><span>Attiva notifiche da desktop</span></a>
             </div>
           </div>
 
-
-          <!-- writing msg bar -->
-          <div id="writing-msg-bar">
-            <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
-            <input type="text" v-model="message" placeholder="Scrivi un messaggio" @keypress.enter="enterMsg">
-            <a href="#"> <i class="fa fa-microphone" aria-hidden="true" @click="enterMsg"></i></a>
+          <!-- search bar -->
+          <div id="search">
+            <div id="search-bar">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="search" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup="filtroChat()" >
+            </div>
           </div>
 
-        </section>
+        </nav>
 
-      </main>
+        <!-- chat list -->
+        <div class="chat-list" >
+
+          <!--  chat -->
+          <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{chatActive: index===contattiIndex}' >
+            <a href="#" >
+              <div class="image">
+                <img :src="item.image" alt="">
+              </div>
+              <div class="info-chat">
+                <span class="name">{{item.name}}</span>
+                <span class="last-msg">{{ item.chat[item.chat.length - 1].msg }}</span>
+              </div>
+              <div class="time-last-msg">
+                <span>{{item.lastday}}</span>
+              </div>
+            </a>
+          </div>
+
+        </div >
+
+      </section> <!--end left column-->
+
+      <!-- RIGHT MAIN SECTION CHAT -->
+      <section class="right-mainsection" v-for="(item,index) in contatti" :key="index" :class="{active: index===contattiIndex}" >
+
+        <!-- contact info -->
+        <div id="contact-info"  >
+          <img :src= "item.image" alt="">
+          <div id="contact" >
+            <span id="contact-name">{{ item.name}}</span>
+            <span id="last-con"> Ultimo accesso {{ item.lastday + item.time }}</span>
+          </div>
+          <div id="chat-icons">
+            <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-paperclip" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <!-- active chat -->
+        <div id="active-chat" >
+          <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
+            <div :class="item.posizione">
+              <div :class="item.stato">
+                <p id="messaggio" >{{ item.msg }}</p>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <span class="msg-time">{{ item.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
+        <!-- writing msg bar -->
+        <div id="writing-msg-bar">
+          <a href="#"><i class="fa fa-smile-o" aria-hidden="true"></i></a>
+          <input type="text" v-model="message" placeholder="Scrivi un messaggio" @keypress.enter="enterMsg">
+          <a href="#"> <i class="fa fa-microphone" aria-hidden="true" @click="enterMsg"></i></a>
+        </div>
+
+      </section>
 
     </div>
 
