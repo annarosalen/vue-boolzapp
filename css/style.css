@@ -318,11 +318,19 @@ a{
   display: flex;
 }
 
-.chatActive{
+.contactActive{
   display: block;
   background-color: lightgray;
 }
 
-.chevronActive{
+
+.chevDropdown{
+  padding: 5px;
+  display:none;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blockActive{
   display: block;
 }

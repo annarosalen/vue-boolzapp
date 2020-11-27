@@ -59,7 +59,7 @@
         <div class="chat-list" >
 
           <!--  chat -->
-          <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{chatActive: index===contattiIndex}' >
+          <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{contactActive: index===contattiIndex}' >
             <a href="#" >
               <div class="image">
                 <img :src="item.image" alt="">
@@ -99,9 +99,13 @@
         <div id="active-chat" >
           <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
             <div :class="item.posizione">
-              <div :class="item.stato">
+              <div :class="item.stato" @mouseover="{ chevActive = 'blockActive' }" @mouseleave="chevActive = ''">
                 <p id="messaggio" >{{ item.msg }}</p>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+                <i class="fa fa-chevron-down" aria-hidden="true" :class="chevActive" @click="dropdown" >
+                  <div class="chevDropdown" :class="dropActive">
+                    <a href="#" @click="deleteMsg(item)"> <span >Elimina</span></a>
+                  </div>
+                </i>
                 <span class="msg-time">{{ item.date }}</span>
               </div>
             </div>

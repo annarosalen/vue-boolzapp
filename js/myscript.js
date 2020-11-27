@@ -1,6 +1,8 @@
 var app= new Vue({
   el:"#app",
   data: {
+    dropActive:"",
+    chevActive:"",
     search:"",
     message:"",
     contattiIndex: 0,
@@ -158,8 +160,19 @@ var app= new Vue({
           item.display = false;
         }
       });
+    },
+
+    dropdown: function(){
+      if (this.dropActive == "") {
+        this.dropActive = "blockActive";
+      }else{
+        this.dropActive = "";
+      }
+    },
+
+    deleteMsg: function(item){
+      this.contatti[this.contattiIndex].chat.splice(this.contatti[this.contattiIndex].chat.indexOf(item), 1);
     }
-    
   }
 
 
