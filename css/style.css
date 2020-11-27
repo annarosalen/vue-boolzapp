@@ -134,6 +134,7 @@ a{
   font-size: 12px;
   outline: none;
 }
+/* fine nav bar */
 
 /* lista delle chat */
 .chat-list{
@@ -142,6 +143,7 @@ a{
   overflow: auto;
 }
 
+/* single chat */
 .chat{
   min-height: 80px;
   border-bottom: solid lightgray 1px;
@@ -193,6 +195,7 @@ a{
   flex-direction: column;
 }
 
+/* contact info above */
 .right-mainsection #contact-info{
   flex-basis: 60px;
   background-color: #eaeaea;
@@ -233,6 +236,7 @@ a{
   padding-right: 15px;
 }
 
+/* visible chat */
 .right-mainsection #active-chat{
   flex-grow: 1;
   background-image:url(../img/whatsappbg.png);
@@ -286,6 +290,13 @@ a{
   display: none;
 }
 
+.chevDropdown{
+  padding: 5px;
+  display:none;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .msg-time{
   display: block;
   font-size: 12px;
@@ -300,6 +311,7 @@ a{
   padding: 10px 20px;
 }
 
+/* input to send msg down */
 #writing-msg-bar .fa-smile-o, .fa-microphone{
   font-size: 25px;
   color: #697376;
@@ -314,6 +326,7 @@ a{
   outline: none;
 }
 
+/* classes to active elements */
 .active{
   display: flex;
 }
@@ -321,14 +334,6 @@ a{
 .contactActive{
   display: block;
   background-color: lightgray;
-}
-
-
-.chevDropdown{
-  padding: 5px;
-  display:none;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .blockActive{

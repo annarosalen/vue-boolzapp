@@ -12,9 +12,8 @@
 
     <div id="app">
 
-        <!-- LEFT COLUMN -->
+      <!-- LEFT COLUMN -->
       <section class="left-column">
-
 
         <nav class="nav">
 
@@ -58,7 +57,7 @@
         <!-- chat list -->
         <div class="chat-list" >
 
-          <!--  chat -->
+          <!-- single chat -->
           <div class="chat" @click="openedchat(index)" v-for="(item,index) in contatti" v-if="item.display" :class='{contactActive: index===contattiIndex}' >
             <a href="#" >
               <div class="image">
@@ -72,16 +71,16 @@
                 <span>{{item.lastday}}</span>
               </div>
             </a>
-          </div>
+          </div> <!--end single chat-->
 
-        </div >
+        </div > <!--end chat list-->
 
       </section> <!--end left column-->
 
       <!-- RIGHT MAIN SECTION CHAT -->
       <section class="right-mainsection" v-for="(item,index) in contatti" :key="index" :class="{active: index===contattiIndex}" >
 
-        <!-- contact info -->
+        <!-- contact info above -->
         <div id="contact-info"  >
           <img :src= "item.image" alt="">
           <div id="contact" >
@@ -95,9 +94,11 @@
           </div>
         </div>
 
-        <!-- active chat -->
+        <!-- visible chat -->
         <div id="active-chat" >
           <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
+
+            <!-- messages -->
             <div :class="item.posizione">
               <div :class="item.stato" @mouseover="{ chevActive = 'blockActive' }" @mouseleave="chevActive = ''">
                 <p id="messaggio" >{{ item.msg }}</p>
@@ -108,9 +109,10 @@
                 </i>
                 <span class="msg-time">{{ item.date }}</span>
               </div>
-            </div>
+            </div> <!--end messages-->
+
           </div>
-        </div>
+        </div> <!--end visible chat-->
 
 
         <!-- writing msg bar -->
@@ -120,9 +122,9 @@
           <a href="#"> <i class="fa fa-microphone" aria-hidden="true" @click="enterMsg"></i></a>
         </div>
 
-      </section>
+      </section> <!--end right main section -->
 
-    </div>
+    </div> <!--end app -->
 
     <script type="text/javascript" src="js/myscript.js"> </script>
   </body>

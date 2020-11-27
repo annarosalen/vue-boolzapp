@@ -109,10 +109,13 @@ var app= new Vue({
     ]
   },
   methods:{
+
+    // ACTIVE CHAT
     openedchat: function(index){
       this.contattiIndex= index;
     },
 
+    // SENDING MSG
     enterMsg: function(){
       if (this.message=="") {
 
@@ -133,6 +136,7 @@ var app= new Vue({
 
     },
 
+    // AUTOMATIC MSG
     getMsg: function(){
       this.contatti[this.contattiIndex].chat.push(
         {
@@ -144,6 +148,7 @@ var app= new Vue({
       );
     },
 
+    // CURRENT TIME MSG
     currentTime: function(){
       var today = new Date();
       var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
@@ -152,6 +157,7 @@ var app= new Vue({
       return dateTime;
     },
 
+    // CHAT LIST FILTER
     filtroChat: function() {
       this.contatti.forEach(item => {
         if(item.name.toLowerCase().indexOf(this.search.toLowerCase())>-1){
@@ -162,6 +168,7 @@ var app= new Vue({
       });
     },
 
+    // DROPDOWN VISIBLE
     dropdown: function(){
       if (this.dropActive == "") {
         this.dropActive = "blockActive";
@@ -170,6 +177,7 @@ var app= new Vue({
       }
     },
 
+    // DELETE A MSG
     deleteMsg: function(item){
       this.contatti[this.contattiIndex].chat.splice(this.contatti[this.contattiIndex].chat.indexOf(item), 1);
     }
