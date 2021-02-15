@@ -153,9 +153,13 @@ var app= new Vue({
 
         this.message="";
 
-        setTimeout(this.getMsg, 1000);
+        setTimeout(() =>{
+          this.getMsg()
+          
+        }, 1000);
+        
       }
-
+      this.scrollDown();
     },
 
     // AUTOMATIC MSG
@@ -168,6 +172,7 @@ var app= new Vue({
           posizione: "box-msg-left"
         }
       );
+      
     },
 
     // CURRENT TIME MSG
@@ -203,8 +208,16 @@ var app= new Vue({
     // DELETE A MSG
     deleteMsg: function(item){
       this.contatti[this.contattiIndex].chat.splice(this.contatti[this.contattiIndex].chat.indexOf(item), 1);
-    }
-  }
+    },
 
+    //SCROLLDOWN
+    scrollDown: function(){
+      setTimeout(()=>{
+        var containerChat = this.$refs['active-chat'];
+        containerChat.scrollTop = containerChat.scrollHeight;
+      },5);
+      
+    },
+  },
 
 });
