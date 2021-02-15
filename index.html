@@ -96,17 +96,20 @@
 
         <!-- visible chat -->
         <div id="active-chat" >
-          <div class="row-msg" v-for="(item,index) in contatti[contattiIndex].chat">
+          <div class="row-msg" v-for="(item,indice) in contatti[contattiIndex].chat" :key='indice'>
 
             <!-- messages -->
             <div :class="item.posizione">
-              <div :class="item.stato" @mouseover="{ chevActive = 'blockActive' }" @mouseleave="chevActive = ''">
-                <p id="messaggio" >{{ item.msg }}</p>
-                <i class="fa fa-chevron-down" aria-hidden="true" :class="chevActive" @click="dropdown" >
-                  <div class="chevDropdown" :class="dropActive">
-                    <a href="#" @click="deleteMsg(item)"> <span >Elimina</span></a>
-                  </div>
-                </i>
+              <div :class="item.stato" @click="toggleChev(indice)">
+                <p id="messaggio">{{ item.msg }}</p>
+                <i class="fa fa-chevron-down" :class="{blockActive: item.chev}"aria-hidden="true" @click="toggleDropdown(indice)"  ></i>
+                <div class="chevDropdown" :class="{blockActive: item.dropdown}" @mouseleave="toggleDropdown(indice)">
+                  <ul>
+                    <li><a href="#" @click="deleteMsg(item)">Elimina</a></li>
+                    <li><a href="#">Salva</a></li>
+                    <li><a href="#">Copia</a></li>
+                  </ul>                  
+                </div>   
                 <span class="msg-time">{{ item.date }}</span>
               </div>
             </div> <!--end messages-->

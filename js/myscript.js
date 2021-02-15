@@ -1,10 +1,10 @@
 var app= new Vue({
   el:"#app",
   data: {
-    dropActive:"",
     chevActive:"",
     search:"",
     message:"",
+    chatIndex:0,
     contattiIndex: 0,
     contatti: [
 
@@ -19,19 +19,25 @@ var app= new Vue({
             msg: "ciao come stai?",
             date: "10/11/2020 13:44",
             stato: "msg-sent",
-            posizione: "box-msg-right"
+            posizione: "box-msg-right",
+            dropdown: false,
+            chev: false,
           },
           {
             msg: "ciao tutto bene",
             date: "10/11/2020 14:00",
             stato: "msg-received",
-            posizione: "box-msg-left"
+            posizione: "box-msg-left",
+            dropdown: false,
+            chev: false,
           },
           {
             msg:"domani cosa fai?",
             date: "10/11/2020 14:00",
             stato: "msg-received",
-            posizione: "box-msg-left"
+            posizione: "box-msg-left",
+            dropdown: false,
+            chev: false,
           }
         ]
       },
@@ -47,13 +53,17 @@ var app= new Vue({
             msg: "ciaooooo?",
             date: "30/11/2020 13:20",
             stato: "msg-sent",
-            posizione: "box-msg-right"
+            posizione: "box-msg-right",
+            dropdown: false,
+            chev: false,
           },
           {
             msg: "a domani",
             date: "30/11/2020 15:00",
             stato: "msg-received",
-            posizione: "box-msg-left"
+            posizione: "box-msg-left",
+            dropdown: false,
+            chev: false,
           },
         ]
       },
@@ -68,19 +78,25 @@ var app= new Vue({
             msg: "Hola como estas?",
             date: "29/10/2020 09:50",
             stato: "msg-sent",
-            posizione: "box-msg-right"
+            posizione: "box-msg-right",
+            dropdown: false,
+            chev: false,
           },
           {
             msg: "Holiii, mañana nos vamos de fiesta",
             date: "29/10/2020 12:20",
             stato: "msg-received",
-            posizione: "box-msg-left"
+            posizione: "box-msg-left",
+            dropdown: false,
+            chev: false,
           },
           {
             msg:"te vas a juntar con nosotros?",
             date: "29/10/2020 12:21",
             stato: "msg-received",
-            posizione: "box-msg-left"
+            posizione: "box-msg-left",
+            dropdown: false,
+            chev: false,
           }
         ]
       },
@@ -96,23 +112,29 @@ var app= new Vue({
             msg:"Hi I'll call you tomorrow",
             date: "31/10/2020 14:20",
             stato: "msg-sent",
-            posizione:"box-msg-right"
+            posizione:"box-msg-right",
+            dropdown: false,
+            chev: false,
           },
           {
             msg:"ok,bye",
             date: "31/10/2020 14:23",
             stato:"msg-received",
-            posizione:"box-msg-left"
+            posizione:"box-msg-left",
+            dropdown: false,
+            chev: false,
           }
         ]
       }
     ]
   },
+
   methods:{
 
     // ACTIVE CHAT
     openedchat: function(index){
       this.contattiIndex= index;
+      console.log(this.contatti[this.contattiIndex].chat[this.chatIndex]);
     },
 
     // SENDING MSG
@@ -168,13 +190,14 @@ var app= new Vue({
       });
     },
 
-    // DROPDOWN VISIBLE
-    dropdown: function(){
-      if (this.dropActive == "") {
-        this.dropActive = "blockActive";
-      }else{
-        this.dropActive = "";
-      }
+    //CHEVRON VISIBLE
+    toggleChev(i){
+      this.contatti[this.contattiIndex].chat[i].chev = !(this.contatti[this.contattiIndex].chat[i].chev);
+    },
+
+    //DROPDOWN VISIBLE
+    toggleDropdown(i){
+      this.contatti[this.contattiIndex].chat[i].dropdown = !(this.contatti[this.contattiIndex].chat[i].dropdown);
     },
 
     // DELETE A MSG
