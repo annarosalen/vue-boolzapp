@@ -260,6 +260,10 @@ a{
   word-wrap: break-word;
 }
 
+.msg-received, .msg-sent{
+  position: relative;
+}
+
 .row-msg .msg-sent{
   min-height: 60px;
   min-width: 200px;
@@ -301,6 +305,9 @@ a{
   width: 100px;
   float: right;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: absolute;
+  top: 20px;
+  right: 10px;
 }
 
 .msg-time{
