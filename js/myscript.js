@@ -159,7 +159,7 @@ var app= new Vue({
         }, 1000);
         
       }
-      this.scrollDown();
+      
     },
 
     // AUTOMATIC MSG
@@ -171,7 +171,9 @@ var app= new Vue({
           stato: "msg-received",
           posizione: "box-msg-left"
         }
+        
       );
+      this.scrollDown();
       
     },
 
@@ -213,11 +215,11 @@ var app= new Vue({
     //SCROLLDOWN
     scrollDown: function(){
       setTimeout(()=>{
-        var containerChat = this.$refs['active-chat'];
-        containerChat.scrollTop = containerChat.scrollHeight;
+        document.querySelector('#active-chat').scrollTop = document.querySelector('#active-chat').scrollHeight
       },5);
       
     },
+    
   },
 
 });
