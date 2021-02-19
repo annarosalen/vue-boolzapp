@@ -244,7 +244,7 @@ a{
 .right-mainsection #active-chat{
   flex-grow: 1;
   background-image:url(../img/whatsappbg.png);
-  overflow-y:scroll;
+  overflow-y:auto;
   scroll-behavior: smooth;
 }
 

@@ -215,9 +215,13 @@ var app= new Vue({
     //SCROLLDOWN
     scrollDown: function(){
       setTimeout(()=>{
-        document.querySelector('#active-chat').scrollTop = document.querySelector('#active-chat').scrollHeight
+        let activeChat= this.$refs['activeChat'];
+
+        activeChat.forEach((item,i)=>{
+          activeChat[i].scrollTop=activeChat[i].scrollHeight;
+        })
+        
       },5);
-      
     },
     
   },
